@@ -5,8 +5,8 @@
       "id": "0",
       "title": "AntiLogic",
       "author": "koi",
-      "url": "external-assets/games/AntiLogic/",
-      "embed_url": "external-assets/games/AntiLogic/",
+      "url": "external-assets/games/web/AntiLogic/",
+      "embed_url": "external-assets/games/web/AntiLogic/",
       "type": "web",
       "portal_id": "0"
     },
@@ -14,8 +14,8 @@
         "id": "1",
         "title": "Baldi's Basics Classic Remastered",
         "author": "koi",
-        "url": "external-assets/games/BBCR/",
-        "embed_url": "external-assets/games/BBCR/",
+        "url": "external-assets/games/web/BBCR/",
+        "embed_url": "external-assets/games/web/BBCR/",
         "type": "web",
         "portal_id": "1"
     },
@@ -23,8 +23,8 @@
         "id": "2",
         "title": "Fancy Pants Adventures: World 1 Remix!",
         "author": "koi",
-        "url": "external-assets/games/FPAW1R/FPAWorld1_sdk.swf",
-        "embed_url": "external-assets/games/FPAW1R/FPAWorld1_sdk.swf",
+        "url": "external-assets/games/flash/FPAW1R/FPAWorld1_sdk.swf",
+        "embed_url": "external-assets/games/flash/FPAW1R/FPAWorld1_sdk.swf",
         "type": "flash",
         "portal_id": "2"
     },
@@ -32,8 +32,8 @@
         "id": "3",
         "title": "Sonic Utopia",
         "author": "koi",
-        "url": "external-assets/games/SUtopia/",
-        "embed_url": "external-assets/games/SUtopia/",
+        "url": "external-assets/games/web/SUtopia/",
+        "embed_url": "external-assets/games/web/SUtopia/",
         "type": "web",
         "portal_id": "3"
     },
@@ -41,8 +41,8 @@
         "id": "4",
         "title": "The maybekoi discord.com experience",
         "author": "koi",
-        "url": "external-assets/games/TMKDDCE/",
-        "embed_url": "external-assets/games/TMKDCE/",
+        "url": "external-assets/games/web/TMKDDCE/",
+        "embed_url": "external-assets/games/web/TMKDCE/",
         "type": "web",
         "portal_id": "4"
     },
@@ -50,8 +50,8 @@
         "id": "5",
         "title": "Yo! Noid 2: Game of a Year Edition",
         "author": "koi",
-        "url": "external-assets/games/YNoid2/",
-        "embed_url": "external-assets/games/YNoid2/",
+        "url": "external-assets/games/web/YNoid2/",
+        "embed_url": "external-assets/games/web/YNoid2/",
         "type": "web",
         "portal_id": "5"
     }
