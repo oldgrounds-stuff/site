@@ -1,0 +1,3 @@
+[submodule "external-assets"]
+	path = external-assets
+	url = https://github.com/oldgrounds-stuff/external-assets
