@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Web Games Portal — Oldgrounds.xyz</title>
+	<link rel="stylesheet" href="assets/games.css" type="text/css" media="screen">
+	<meta name="viewport" content="width=780">
+	<script src="js/main.js" defer></script>
+</head>
+
+<body>
+<div id="mainframe">
+	<div id="main">
+		<div id="center">
+			<div id="banner">
+				<h1 class="ng"><a href="/">Oldgrounds.xyz — A website by two dumbasses <3</a></h1>
+				<form method="get" id="search" action="/">
+					<input type="text" id="topsearch_terms" size="12" class="search inputfield formtext">
+					<select id="topsearch_type" class="formtext pulldown">
+						<option value="title">Title&nbsp;&nbsp;</option>
+						<option value="author">Author&nbsp;&nbsp;</option>
+					</select>
+					<span class="btn"><a href="/">Search!</a></span>
+				</form>
+				<div class="linkcomplete" id="searchhint"></div>
+			</div>
+			
+			<div id="nav-sub">
+				<dl>
+					<dd><a href="/">← Back to Home</a></dd>
+					<dd><a href="/about.html">About Oldgrounds</a></dd>
+				</dl>
+			</div>
+
+			<div id="cont-out">
+				<div id="cont-mid">
+					<div id="cont">
+
+						<div class="box title">
+							<div class="boxtop"><div></div></div>
+							<div class="boxl">
+								<div class="boxr">
+									<div class="boxm">
+										<div class="headsizer">
+											<div class="heading">
+												<h2 class="i-features">Web Games</h2>
+											</div>
+										</div>
+										<div class="featurefix games-grid" id="web-games-grid">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="boxbot"><div></div></div>
+						</div>
+
+						<br clear="all">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="foot">
+	<div id="originalfooterdiv">
+		<div class="box boxsizer">
+		<span id="originalfooterspan">
+			<strong class="dotted yellow">© Copyright 2025 koi and Yui. All Rights Reserved. <a href="/about.html" class="yellow">About Oldgrounds</a></strong>
+			<strong class="dotted">oldgrounds.xyz — A website by two dumbasses <3</strong>
+		</span>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		loadWebGames();
+	});
+
+	async function loadWebGames() {
+		try {
+			const [contentResponse, linksResponse] = await Promise.all([
+				fetch('data/content.json'),
+				fetch('data/contentlinks.json')
+			]);
+			
+			const contentData = await contentResponse.json();
+			const linksData = await linksResponse.json();
+			
+			const wqebGames = [];
+			if (contentData.webGames) {
+				contentData.webGames.forEach(game => {
+					if (linksData.games[game.id] && linksData.games[game.id].type === 'web') {
+						wqebGames.push({ ...game, ...linksData.games[game.id] });
+					}
+				});
+			}
+			
+			const gamesGrid = document.getElementById('web-games-grid');
+			if (gamesGrid && wqebGames.length > 0) {
+				gamesGrid.innerHTML = '';
+				
+				wqebGames.forEach(game => {
+					const gameItem = document.createElement('div');
+					gameItem.className = 'game-item';
+					gameItem.innerHTML = `
+						<a href="portal.html?id=${game.id}" class="feature" title="Suitable For ${game.rating || 'Everyone'}">
+							<img src="${game.thumbnail || 'assets/thumbs/antilgoc.png'}" height="80" width="80" alt="icon">
+							<span class="fout">
+								<span class="fmid">
+									<span class="fin"><span class="ftitle">${game.title}</span>${(game.shortdescription || '').replace(/\n/g, '<br>')}</span>
+								</span>
+							</span>
+						</a>
+					`;
+					gamesGrid.appendChild(gameItem);
+				});
+			} else {
+				gamesGrid.innerHTML = '<p style="text-align: center; color: #999; padding: 20px;">No web games available yet. Check back soon!</p>';
+			}
+		} catch (error) {
+			console.error('Error loading web games:', error);
+		}
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,722 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #d2d8e3;
+	height: 100%;
+	background: #26272b;
+}
+
+#mainframe {
+	position: relative;
+	min-height: 100%;
+}
+
+#main {
+	background: none;
+}
+
+#center {
+	width: 770px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#banner {
+	height: 142px;
+	position: relative;
+	width: 770px;
+}
+
+#banner h1.ng {
+	font-size: 2.4em;
+	color: #fff;
+	margin: 20px 0 10px 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#banner h1.ng a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#banner h1.ng a:hover {
+	color: #fedf67;
+}
+
+.loginbox {
+	display: none;
+}
+
+.hiddensubmit {
+	display: none;
+}
+
+#search {
+	position: absolute;
+	top: 100px;
+	right: 20px;
+	font-size: 1.1em;
+}
+
+#search input[type="text"] {
+	width: 100px;
+	padding: 2px;
+	background: #333;
+	color: #fff;
+	border: 1px solid #555;
+}
+
+#search select {
+	padding: 2px;
+	background: #333;
+	color: #fff;
+	border: 1px solid #555;
+}
+
+#search .btn a {
+	background: #f90;
+	color: #000;
+	padding: 2px 8px;
+	text-decoration: none;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+#nav-sub {
+	width: 770px;
+	border-top: solid 1px #40444c;
+	clear: both;
+}
+
+#nav-sub dl {
+	text-align: center;
+	margin: 4px 0;
+}
+
+#nav-sub dd {
+	display: inline;
+	font-size: 1.2em;
+	color: #40444c;
+}
+
+#nav-sub a {
+	color: #f90;
+	text-decoration: none;
+	margin: 0 4px;
+}
+
+#nav-sub a:hover {
+	color: #fedf67;
+}
+
+#nav-main {
+	width: 770px;
+	min-height: 38px;
+	background: none;
+	margin: 3px 0 0 0;
+	clear: both;
+}
+
+#nav-main dl {
+	list-style: none;
+}
+
+#nav-main dt, #nav-main dd {
+	float: left;
+	text-indent: -9999em;
+	margin-bottom: 4px;
+}
+
+#nav-main dd a {
+	display: block;
+	height: 33px;
+	background: #333;
+	border: 1px solid #555;
+	overflow: hidden;
+	color: #fff;
+	text-decoration: none;
+	text-indent: 0;
+	line-height: 33px;
+	text-align: center;
+	font-weight: bold;
+	margin-right: 2px;
+}
+
+#nav-main dd a:hover {
+	background: #444;
+}
+
+#nav-main dd#flashportal a { width: 128px; }
+#nav-main dd#audioportal a { width: 127px; }
+#nav-main dd#artportal a { width: 47px; }
+#nav-main dd#games a { width: 68px; }
+#nav-main dd#movies a { width: 72px; }
+#nav-main dd#collections a { width: 118px; }
+#nav-main dd#series a { width: 65px; }
+#nav-main dd#forums a { width: 79px; }
+#nav-main dd#store a { width: 66px; }
+
+#cont-out {
+	width: 770px;
+	margin: 5px 0 0 0;
+	background: #25272d;
+	border: 1px solid #40444c;
+	clear: both;
+}
+
+#cont-mid {
+	padding-bottom: 20px;
+}
+
+#cont {
+	padding-top: 2px;
+	position: relative;
+}
+
+.box {
+	display: block;
+	margin: 1px 3px 5px 3px;
+	clear: both;
+}
+
+.boxtop {
+	position: relative;
+	background: #333;
+	margin: 0 0 0 13px;
+	height: 13px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.boxtop div {
+	position: absolute;
+	height: 13px;
+	width: 13px;
+	left: -13px;
+	background: #333;
+	border-top-left-radius: 5px;
+}
+
+.boxbot {
+	position: relative;
+	background: #222;
+	margin: 0 0 0 13px;
+	height: 13px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.boxbot div {
+	position: absolute;
+	height: 13px;
+	width: 13px;
+	left: -13px;
+	background: #222;
+	border-bottom-left-radius: 5px;
+}
+
+.boxl {
+	padding: 0 0 0 11px;
+	background: #333;
+}
+
+.boxr {
+	padding: 0 11px 0 0;
+	background: #333;
+}
+
+.boxm {
+	background: #25272d;
+	padding: 3px 5px 3px 5px;
+	min-height: 40px;
+}
+
+.boxsizer {
+	padding: 5px 5px 5px 5px;
+}
+
+#leftcol {
+	width: 257px;
+	float: left;
+	margin-right: 10px;
+	margin-top: -355px;
+}
+
+#leftcol .box {
+	width: 254px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+}
+
+#rightcol {
+	width: 513px;
+	float: right;
+	margin-top: 10px;
+}
+
+#rightcol .box {
+	margin-left: 1px;
+	margin-right: 0;
+	margin-bottom: 5px;
+}
+
+.twothird {
+	width: 509px;
+}
+
+.heading {
+	margin-bottom: 10px;
+}
+
+.heading h2 {
+	font-size: 1.6em;
+	color: #fff;
+	margin-bottom: 5px;
+}
+
+.heading p {
+	font-size: 1.1em;
+	color: #ccc;
+}
+
+.heading a {
+	color: #f90;
+	text-decoration: none;
+}
+
+.heading a:hover {
+	color: #fedf67;
+}
+
+/* Feature Icons */
+.i-features:before { content: "★ "; color: #f90; }
+.i-audio:before { content: "♪ "; color: #f90; }
+.i-art:before { content: "✎ "; color: #f90; }
+.i-info:before { content: "ℹ "; color: #f90; }
+.i-flash:before { content: "⚡ "; color: #f90; }
+.i-ok:before { content: "✓ "; color: #f90; }
+
+/* Featured Content */
+.featurefix {
+	overflow: hidden;
+	margin-top: 5px;
+}
+
+/* Games Grid Layout */
+.games-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 10px;
+	padding: 10px;
+}
+
+.games-grid .game-item {
+	width: 100%;
+}
+
+.games-grid .feature {
+	width: 100% !important;
+	margin: 0;
+	float: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	min-height: 120px;
+}
+
+.games-grid .feature img {
+	float: none;
+	margin: 0 0 8px 0;
+	border: 2px solid #40444c;
+}
+
+.games-grid .feature:hover img {
+	border-color: #f90;
+}
+
+.games-grid .fout {
+	width: 100%;
+}
+
+.games-grid .ftitle {
+	font-size: 1.1em;
+	margin-bottom: 5px;
+}
+
+.games-grid .fin {
+	font-size: 0.9em;
+	line-height: 1.3em;
+}
+
+.feature {
+	display: block;
+	float: left;
+	width: 233px;
+	margin: 2px;
+	padding: 3px;
+	background: #2a2c32;
+	border: 1px solid #40444c;
+	text-decoration: none;
+	color: #d2d8e3;
+	min-height: 46px;
+}
+
+#leftcol .feature {
+	width: 217px;
+}
+
+#rightcol .feature {
+	width: 233px;
+}
+
+.feature:hover {
+	background: #2f3137;
+	border-color: #f90;
+}
+
+.feature img {
+	float: left;
+	margin-right: 8px;
+	border: 1px solid #40444c;
+}
+
+.fout, .fmid, .fin {
+	display: block;
+}
+
+.ftitle {
+	font-weight: bold;
+	color: #fff;
+	font-size: 1.2em;
+}
+
+.fblurb {
+	font-size: 1.0em;
+	color: #ccc;
+	line-height: 1.2em;
+}
+
+/* Featured Game */
+#featuredgame {
+	width: 477px;
+	height: 174px;
+	border: 2px solid #f90;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Portal Items (Art) */
+.portal_item {
+	float: left;
+	margin: 0 3px 13px 10px;
+	position: relative;
+}
+
+.portal_item a {
+	display: block;
+	text-decoration: none;
+}
+
+.portal_item img {
+	border: 2px solid #40444c;
+}
+
+.portal_item:hover img {
+	border-color: #f90;
+}
+
+.hovertitle {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.8);
+	color: #fff;
+	padding: 3px;
+	font-size: 0.9em;
+}
+
+.Everybody {
+	color: #0a0;
+	font-size: 0.8em;
+}
+
+/* Latest Submissions */
+#colorlabels {
+	float: left;
+	width: 222px;
+	margin-top: 4px;
+	padding-bottom: 8px;
+}
+
+#colorlabels li {
+	display: inline;
+	font-size: 0.9em;
+	margin-right: 10px;
+}
+
+.great { color: #0a0; }
+.awesome { color: #f90; }
+.narrow { font-weight: bold; }
+
+.entries {
+	list-style: none;
+	font-size: 1.1em;
+}
+
+.entries li {
+	margin-bottom: 3px;
+	padding: 2px;
+}
+
+.entries .movie:before { content: "🎬 "; }
+.entries .game:before { content: "🎮 "; }
+
+.entries a {
+	color: #d2d8e3;
+	text-decoration: none;
+}
+
+.entries a:hover {
+	color: #fff;
+}
+
+.entries a.awesome { color: #f90; }
+.entries a.great { color: #0a0; }
+.entries a.none { color: #ccc; }
+
+/* Bio Lists */
+.bio {
+	list-style: none;
+	font-size: 1.1em;
+}
+
+.bio li {
+	margin-bottom: 5px;
+}
+
+.bio a {
+	color: #f90;
+	text-decoration: none;
+}
+
+.bio a:hover {
+	color: #fedf67;
+}
+
+/* Ads */
+.adhead, .adfoot {
+	text-align: center;
+	background: #333;
+	border: 1px solid #555;
+	padding: 5px;
+	margin: 2px 0;
+	color: #999;
+	font-size: 1.2em;
+}
+
+.adhead {
+	margin-bottom: 5px;
+}
+
+.horzad {
+	height: 90px;
+	width: 728px;
+	background: #222;
+	border: 1px solid #444;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #888;
+}
+
+#banner200200 {
+	height: 200px;
+	width: 200px;
+	background: #222;
+	border: 1px solid #444;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #888;
+	text-align: center;
+	font-size: 1.1em;
+}
+
+/* Footer */
+#foot {
+	position: relative;
+	background: #1a1c20;
+	border-top: 2px solid #40444c;
+	padding: 20px 0;
+	clear: both;
+}
+
+#originalfooterdiv {
+	width: 770px;
+	margin: 0 auto;
+}
+
+#foot .featurefix {
+	float: left;
+	width: 250px;
+	margin-right: 10px;
+}
+
+#foot h4 {
+	color: #f90;
+	font-size: 1.4em;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #40444c;
+	padding-bottom: 5px;
+}
+
+#foot .feature {
+	width: 230px;
+	margin: 5px 0;
+	background: #222;
+}
+
+#originalfooterspan {
+	clear: both;
+	display: block;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 1.0em;
+}
+
+#originalfooterspan .dotted {
+	display: block;
+	margin: 5px 0;
+	padding: 3px 0;
+	border-top: 1px dotted #40444c;
+}
+
+#originalfooterspan .yellow a {
+	color: #f90;
+	text-decoration: none;
+}
+
+#originalfooterspan .yellow a:hover {
+	color: #fedf67;
+}
+
+#originalfooterspan .orange a {
+	color: #ff6600;
+	text-decoration: none;
+}
+
+#originalfooterspan .red a {
+	color: #ff3300;
+	text-decoration: none;
+}
+
+/* Clearfix */
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Form Elements */
+.formtext, .inputfield {
+	background: #333;
+	color: #fff;
+	border: 1px solid #555;
+	padding: 2px;
+}
+
+.pulldown {
+	background: #333;
+	color: #fff;
+	border: 1px solid #555;
+	padding: 2px;
+}
+
+/* Button Styles */
+.btn a {
+	background: #f90;
+	color: #000;
+	padding: 3px 8px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 3px;
+	display: inline-block;
+}
+
+.btn a:hover {
+	background: #fedf67;
+}
+
+/* Hide certain elements */
+.hidecode {
+	display: none;
+}
+
+/* Utilities */
+.gray {
+	color: #999;
+}
+
+.dotted {
+	border-top: 1px dotted #40444c;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+/* Music Album Covers */
+.falbum {
+	position: relative;
+	float: left;
+	margin-right: 8px;
+}
+
+.falbum span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 46px;
+	height: 46px;
+	background: rgba(0,0,0,0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+	#cont-out {
+		width: 95%;
+		margin: 5px auto;
+	}
+	
+	#nav-sub, #nav-main {
+		width: 100%;
+	}
+	
+	#leftcol, #rightcol {
+		width: 100%;
+		float: none;
+	}
+	
+	.loginbox {
+		position: static;
+		width: auto;
+		margin: 10px 0;
+	}
+	
+	#search {
+		position: static;
+		margin: 10px 0;
+	}
+}

@@ -1,0 +1,243 @@
+{
+  "siteNews": [
+    {
+      "id": "1",
+      "title": "Website is live!",
+      "author": "Yui",
+      "url": "/bbs/topic/1",
+      "date": "2025-08-22",
+      "thumbnail": "assets/pfps/yui.png"
+    },
+    {
+      "id": "2",
+      "title": "Oldgrounds is a thing now!",
+      "author": "koi",
+      "url": "/bbs/topic/2",
+      "date": "2025-08-22",
+      "thumbnail": "assets/pfps/koipfp.png"
+    }  
+  ],
+  "featuredMovies": [
+    {
+      "id": "1",
+      "title": "NONE YET LOL",
+      "description": "NONE YET LOL",
+      "author": "koi",
+      "url": "/portal/view/1",
+      "rating": "Everyone",
+      "thumbnail": "https://via.placeholder.com/46x46/333/fff?text=M1"
+    }
+  ],
+  "featuredGames": [
+    {
+      "id": "0",
+      "title": "AntiLogic",
+      "shortdescription": "\nA short simple game about....well answering a quiz!",
+      "description": "A short simple game about....well answering a quiz!\n\nMade in like 3 hours (maybe a bit over but idk I forgot).\n\nOh yeah, somewhat inspired by my childhood game The Impossible Quiz.\n\nCREDITS:\n\nmaybekoi - Programming and Concept Art\n\nhiroshiNG - Final Art\n\nKennedy - Idea",
+      "author": "koi",
+      "url": "/portal/view/1",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/antilgoc.png",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Quiz",
+      "contributors": [
+        {
+          "name": "koi",
+          "role": "Programming & Concept Art"
+        },
+        {
+          "name": "hiroshiNG",
+          "role": "Final Art"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "title": "BBCR",
+      "shortdescription": "\nThis game isn't what it seems to be...",
+      "description": "Escape Baldi's schoolhouse again in this new remastered version of Baldi's Basics Classic!\nFeaturing three games in one, gameplay improvements, a more authentic art style, accessibility improvements, and brand new ways to play!\nWhether you've played the original or this is your first time, you'll surely have a blast!\n\nGAME BY: MYSTMAN12\n\nWEBGL PORT BY: maybekoi",
+      "author": "koi",
+      "url": "/portal/view/1",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/bbcr.png",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Horror",
+      "contributors": [
+        {
+          "name": "Mystman12",
+          "role": "Game"
+        },
+        {
+          "name": "maybekoi",
+          "role": "WebGL Port"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Fancy Pants Adventures: World 1 Remix!",
+      "shortdescription": "\nRelive the nostalgia of The Fancy Pants Adventures.",
+      "description": "Relive the nostalgia of The Fancy Pants Adventures: World 1 as you speed over spidery slopes and parkour your way to victory! ",
+      "author": "koi",
+      "url": "/portal/view/2",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/stayfancy.png",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Platformer",
+      "contributors": [
+        {
+          "name": "Brad Bourne",
+          "role": "Game"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Sonic Utopia",
+      "shortdescription": "\nClassic Sonic in 3D but if it was good.",
+      "description": "Classic Sonic in 3D but if it was good.",
+      "author": "koi",
+      "url": "/portal/view/2",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/sutopia.jpg",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Platformer",
+      "contributors": [
+        {
+          "name": "Sonic Utopia Devs",
+          "role": "Game"
+        }
+      ]
+    }
+  ],
+  "webGames": [
+    {
+      "id": "0",
+      "title": "AntiLogic",
+      "shortdescription": "\nA short simple game about....well answering a quiz!",
+      "description": "A short simple game about....well answering a quiz!\n\nMade in like 3 hours (maybe a bit over but idk I forgot).\n\nOh yeah, somewhat inspired by my childhood game The Impossible Quiz.\n\nCREDITS:\n\nmaybekoi - Programming and Concept Art\n\nhiroshiNG - Final Art\n\nKennedy - Idea",
+      "author": "koi",
+      "url": "/portal/view/1",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/antilgoc.png",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Quiz",
+      "contributors": [
+        {
+          "name": "koi",
+          "role": "Programming & Concept Art"
+        },
+        {
+          "name": "hiroshiNG",
+          "role": "Final Art"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "title": "BBCR",
+      "shortdescription": "\nThis game isn't what it seems to be...",
+      "description": "Escape Baldi's schoolhouse again in this new remastered version of Baldi's Basics Classic!\nFeaturing three games in one, gameplay improvements, a more authentic art style, accessibility improvements, and brand new ways to play!\nWhether you've played the original or this is your first time, you'll surely have a blast!\n\nGAME BY: MYSTMAN12\n\nWEBGL PORT BY: maybekoi",
+      "author": "koi",
+      "url": "/portal/view/1",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/bbcr.png",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Horror",
+      "contributors": [
+        {
+          "name": "Mystman12",
+          "role": "Game"
+        },
+        {
+          "name": "maybekoi",
+          "role": "WebGL Port"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Sonic Utopia",
+      "shortdescription": "\nClassic Sonic in 3D but if it was good.",
+      "description": "Classic Sonic in 3D but if it was good.",
+      "author": "koi",
+      "url": "/portal/view/3",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/sutopia.jpg",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Platformer",
+      "contributors": [
+        {
+          "name": "Sonic Utopia Devs",
+          "role": "Game"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "The maybekoi discord.com experience",
+      "shortdescription": "\nExperience my every day life on discord. Yeah that's all.",
+      "description": "Experience my every day life on discord. Yeah that's all.",
+      "author": "koi",
+      "url": "/portal/view/4",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/tmkddce.png",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Simulator",
+      "contributors": [
+        {
+          "name": "maybekoi",
+          "role": "Game"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Yo! Noid 2: Game of a Year Edition",
+      "shortdescription": "\nYo! Noid 2: Enter the Void is a freeware platformer fangame developed by Dustin Bragg and a team of indie developers for Waypoint's 2017 New Jam City game jam.",
+      "description": "Yo! Noid 2: Enter the Void is a freeware platformer fangame developed by Dustin Bragg and a team of indie developers for Waypoint's 2017 New Jam City game jam.",
+      "author": "koi",
+      "url": "/portal/view/5",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/yn2.jpg",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Platformer",
+      "contributors": [
+        {
+          "name": "YN2 Devs",
+          "role": "Game"
+        }
+      ]
+    }
+  ],
+  "flashGames": [
+    {
+      "id": "2",
+      "title": "Fancy Pants Adventures: World 1 Remix!",
+      "shortdescription": "\nRelive the nostalgia of The Fancy Pants Adventures.",
+      "description": "Relive the nostalgia of The Fancy Pants Adventures: World 1 as you speed over spidery slopes and parkour your way to victory! ",
+      "author": "koi",
+      "url": "/portal/view/2",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/stayfancy.png",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Platformer",
+      "contributors": [
+        {
+          "name": "Brad Bourne",
+          "role": "Game"
+        }
+      ]
+    }
+  ]
+}

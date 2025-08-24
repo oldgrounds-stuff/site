@@ -1,0 +1,76 @@
+{
+  "games": 
+  {
+    "0": {
+      "id": "0",
+      "title": "AntiLogic",
+      "author": "koi",
+      "url": "https://oldgrounds-stuff.github.io/external-assets/games/AntiLogic/",
+      "embed_url": "https://oldgrounds-stuff.github.io/external-assets/games/AntiLogic/",
+      "type": "web",
+      "portal_id": "0"
+    },
+    "1": {
+        "id": "1",
+        "title": "Baldi's Basics Classic Remastered",
+        "author": "koi",
+        "url": "https://oldgrounds-stuff.github.io/external-assets/games/BBCR/",
+        "embed_url": "https://oldgrounds-stuff.github.io/external-assets/games/BBCR/",
+        "type": "web",
+        "portal_id": "1"
+    },
+    "2": {
+        "id": "2",
+        "title": "Fancy Pants Adventures: World 1 Remix!",
+        "author": "koi",
+        "url": "https://oldgrounds-stuff.github.io/external-assets/games/FPAW1R/FPAWorld1_sdk.swf",
+        "embed_url": "https://oldgrounds-stuff.github.io/external-assets/games/FPAW1R/FPAWorld1_sdk.swf",
+        "type": "flash",
+        "portal_id": "2"
+    },
+    "3": {
+        "id": "3",
+        "title": "Sonic Utopia",
+        "author": "koi",
+        "url": "https://oldgrounds-stuff.github.io/external-assets/games/SUtopia/",
+        "embed_url": "https://oldgrounds-stuff.github.io/external-assets/games/SUtopia/",
+        "type": "web",
+        "portal_id": "3"
+    },
+    "4": {
+        "id": "4",
+        "title": "The maybekoi discord.com experience",
+        "author": "koi",
+        "url": "https://oldgrounds-stuff.github.io/external-assets/games/TMKDDCE/",
+        "embed_url": "https://oldgrounds-stuff.github.io/external-assets/games/TMKDCE/",
+        "type": "web",
+        "portal_id": "4"
+    },
+    "5": {
+        "id": "5",
+        "title": "Yo! Noid 2: Game of a Year Edition",
+        "author": "koi",
+        "url": "https://oldgrounds-stuff.github.io/external-assets/games/YNoid2/",
+        "embed_url": "https://oldgrounds-stuff.github.io/external-assets/games/YNoid2/",
+        "type": "web",
+        "portal_id": "5"
+    }
+  },
+  "authors": {
+    "koi": {
+      "name": "koi",
+      "profile_url": "https://twitter.com/maybekoi_",
+      "profile_picture": "assets/pfps/koipfp.png"
+    }
+  },
+  "categories": {
+    "web": {
+      "name": "Web Games",
+      "portal_path": "/portal/"
+    },
+    "flash": {
+      "name": "Flash Games",
+      "portal_path": "/portal/"
+    }
+  }
+}

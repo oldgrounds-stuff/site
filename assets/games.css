@@ -1,0 +1,446 @@
+/* Games Portal CSS - Based on Oldgrounds Style */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.4;
+}
+
+/* Main layout */
+#mainframe {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #000;
+}
+
+#main {
+    padding: 20px;
+}
+
+#center {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Banner */
+#banner {
+    background: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #666;
+    border-radius: 5px;
+}
+
+#banner h1.ng {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#banner h1.ng a {
+    color: #ff6b35;
+    text-decoration: none;
+}
+
+#banner h1.ng a:hover {
+    text-decoration: underline;
+}
+
+/* Search form */
+#search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search.inputfield {
+    padding: 8px;
+    border: 1px solid #666;
+    border-radius: 3px;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+}
+
+.pulldown {
+    padding: 8px;
+    border: 1px solid #666;
+    border-radius: 3px;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn a {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #ff6b35;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.btn a:hover {
+    background: #ff8533;
+}
+
+/* Navigation */
+#nav-sub, #nav-main {
+    background: #333;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #666;
+    border-radius: 5px;
+}
+
+#nav-sub dl, #nav-main dl {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+#nav-sub dd, #nav-main dd {
+    margin: 0;
+}
+
+#nav-sub a, #nav-main a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#nav-sub a:hover, #nav-main a:hover {
+    text-decoration: underline;
+}
+
+/* Box styles - the signature Oldgrounds box design */
+.box {
+    margin-bottom: 20px;
+    position: relative;
+    background: #333;
+    border: 2px solid #666;
+    border-radius: 0;
+}
+
+.box .boxtop {
+    height: 8px;
+    background: #666;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.box .boxl {
+    background: #333;
+    border-left: 2px solid #666;
+}
+
+.box .boxr {
+    background: #333;
+    border-right: 2px solid #666;
+}
+
+.box .boxm {
+    background: #333;
+    padding: 20px;
+    min-height: 50px;
+}
+
+.box .boxbot {
+    height: 8px;
+    background: #666;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Title boxes */
+.box.title .boxtop {
+    background: #ff6b35;
+}
+
+.box.title .boxl {
+    background: #ff6b35;
+    border-left: 2px solid #ff8533;
+}
+
+.box.title .boxr {
+    background: #ff6b35;
+    border-right: 2px solid #ff8533;
+}
+
+.box.title .boxm {
+    background: #ff6b35;
+    color: #000;
+}
+
+.box.title .boxbot {
+    background: #ff6b35;
+}
+
+/* Heading styles */
+.heading h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.heading h2.i-flash::before {
+    content: "⚡ ";
+    color: #000;
+}
+
+.heading h2.i-features::before {
+    content: "★ ";
+    color: #000;
+}
+
+.heading h2.i-audio::before {
+    content: "♪ ";
+    color: #000;
+}
+
+/* Portal intro section */
+.portal-intro {
+    color: #000;
+    line-height: 1.6;
+}
+
+.portal-intro p {
+    margin-bottom: 15px;
+}
+
+.portal-intro strong {
+    color: #000;
+}
+
+/* Games Grid Layout */
+.games-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
+}
+
+.games-grid .game-item {
+    width: 100%;
+}
+
+.games-grid .feature {
+    width: 100% !important;
+    margin: 0;
+    float: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 140px;
+    background: #2a2c32;
+    border: 1px solid #40444c;
+    padding: 15px;
+    text-decoration: none;
+    color: #d2d8e3;
+    transition: all 0.2s ease;
+}
+
+.games-grid .feature:hover {
+    background: #2f3137;
+    border-color: #ff6b35;
+    transform: translateY(-2px);
+}
+
+.games-grid .feature img {
+    float: none;
+    margin: 0 0 12px 0;
+    border: 2px solid #40444c;
+    border-radius: 5px;
+}
+
+.games-grid .feature:hover img {
+    border-color: #ff6b35;
+}
+
+.games-grid .fout {
+    width: 100%;
+}
+
+.games-grid .ftitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.games-grid .fin {
+    font-size: 0.9em;
+    line-height: 1.4em;
+    color: #ccc;
+}
+
+/* Latest submissions */
+.latest-submissions {
+    color: #000;
+}
+
+.submission-item {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.submission-item:last-child {
+    border-bottom: none;
+}
+
+.submission-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    padding: 8px;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+.submission-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.submission-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.submission-rating {
+    background: #ff6b35;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* Flash info section */
+.flash-info {
+    color: #fff;
+    line-height: 1.6;
+}
+
+.flash-info h3 {
+    color: #ff6b35;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff6b35;
+    padding-bottom: 5px;
+}
+
+.flash-info p {
+    margin-bottom: 15px;
+}
+
+.flash-info ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.flash-info li {
+    margin-bottom: 8px;
+}
+
+.flash-info strong {
+    color: #ff6b35;
+}
+
+/* Links */
+a {
+    color: #ff6b35;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+#foot {
+    margin-top: 40px;
+    padding: 20px;
+    background: #333;
+    border-top: 2px solid #666;
+}
+
+#foot .box {
+    background: transparent;
+    border: none;
+    margin: 0;
+}
+
+#foot .boxm {
+    background: transparent;
+    padding: 0;
+    text-align: center;
+}
+
+#originalfooterspan {
+    display: block;
+}
+
+#originalfooterspan .dotted {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#originalfooterspan .yellow {
+    color: #ff6b35;
+}
+
+/* Responsive design */
+@media (max-width: 800px) {
+    #center {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    #banner {
+        padding: 15px;
+    }
+    
+    #search {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search.inputfield, .pulldown {
+        width: 100%;
+    }
+    
+    #nav-sub dl, #nav-main dl {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* Utility classes */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.hidecode {
+    display: none;
+}

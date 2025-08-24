@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal View - Oldgrounds</title>
+    <link rel="stylesheet" href="assets/portal.css">
+    <script src="https://oldgrounds-stuff.github.io/external-assets/runners/ruffle/ruffle.js"></script>
+</head>
+<body>
+    <div style="background: #333; padding: 15px 20px; border-bottom: 2px solid #666;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="color: #ff6b35; text-decoration: none; font-size: 18px; font-weight: bold;">← Back to Oldgrounds</a>
+            <h1 style="color: #fff; font-size: 20px;">Portal View</h1>
+        </div>
+    </div>
+    
+    <div id="mainframe">
+        <div id="main">
+            <div id="leftcol">
+                <div class="box title">
+                    <div class="boxtop"><div></div></div>
+                    <div class="boxl">
+                        <div class="boxr">
+                            <div class="boxm">
+                                <div class="headsizer">
+                                </div>
+
+                                <div class="creditsizer">
+                                    <div class="credits">
+                                        <img src="assets/pfps/koipfp.png" alt="Author" height="46" width="46" class="icon">
+                                        <div class="fout">
+                                            <div class="fmid">
+                                                <div class="fin">
+                                                    <h4>Uploaded by</h4>
+                                                    <h2 class="author"><a href="#">Author Name</a></h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hr hrfix"><hr></div>
+                                 <div class="boxsizer">
+                                     <p class="dotted">
+                                         <em><strong class="white">Submitted</strong>:</em> 
+                                         <span id="submission-date">Loading...</span>
+                                     </p>
+                                     <p class="dotted">
+                                         <em><strong class="white">Genre</strong>:</em> 
+                                         <span id="genre">Loading...</span>
+                                     </p>
+                                 </div>
+                                 
+                                 <div class="hr"><hr></div>
+                                 <div class="boxsizer">
+                                     <p class="dotted">
+                                         <em><strong class="white">Contributors</strong>:</em>
+                                     </p>
+                                     <div id="contributors-list">
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxbot"><div></div></div>
+                </div>
+            </div>
+
+            <div id="center">
+                <div class="flash_content_area" id="the_flash_embed">
+                    <div class="flashhover_container" id="flashhover_container">
+                        <div class="box widebox title" id="flashhover_box">
+                            <div class="boxtop"><div></div></div>
+                            <div class="boxl">
+                                <div class="boxr">
+                                    <div class="boxm">
+                                        <div class="headsizer">
+                                            <div class="heading overlayed">
+                                                <h1 class="view i-rate-e" id="game-title">
+                                                    <span id="game-name">Loading...</span> 
+                                                </h1>
+                                                <div class="flashoptions" id="size_and_lightbox_options">
+                                                    <button onclick="toggleFullscreen()" style="background:#ff6b35; color:#fff; border:none; padding:5px 10px; border-radius:3px; cursor:pointer;">
+                                                        Fullscreen
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="flash_embed" class="flashhover_embed">
+                                            <div style="display:flex; align-items:center; justify-content:center; height:400px; color:#666;">
+                                                <div style="text-align:center;">
+                                                    <h3>Game Content</h3>
+                                                    <p>Game will be loaded here</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="hr"><hr></div>
+
+                                        <div class="popadtext" id="textunderflash">
+                                            <p>Game description and additional content will appear here.</p>
+                                        </div>
+                                        <br clear="left">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxbot"><div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentGameId = null;
+
+        function initPortalView() {
+            const urlParams = new URLSearchParams(window.location.search);
+            currentGameId = urlParams.get('id') || '1';
+            loadGameData(currentGameId);
+        }
+
+        async function loadGameData(gameId) {
+            try {
+                const [contentResponse, linksResponse] = await Promise.all([
+                    fetch('data/content.json'),
+                    fetch('data/contentlinks.json')
+                ]);
+                
+                const contentData = await contentResponse.json();
+                const linksData = await linksResponse.json();
+                
+                console.log('Looking for game ID:', gameId);
+                console.log('Content data:', contentData);
+                console.log('Links data:', linksData);
+                
+                let game = null;
+                
+                if (contentData.featuredGames) {
+                    game = contentData.featuredGames.find(g => String(g.id) === String(gameId));
+                    console.log('Found in featuredGames:', game);
+                }
+                
+                if (!game && contentData.games) {
+                    game = contentData.games.find(g => String(g.id) === String(gameId));
+                    console.log('Found in games:', game);
+                }
+                
+                if (!game && linksData.games[gameId]) {
+                    console.log('Game found in linksData:', linksData.games[gameId]);
+                    game = linksData.games[gameId];
+                }
+                
+                if (game) {
+                    const gameLinks = linksData.games[gameId];
+                    if (gameLinks) {
+                        game = { ...game, ...gameLinks };
+                        console.log('Merged game data:', game);
+                    }
+                    displayGame(game);
+                } else {
+                    console.log('Game not found for ID:', gameId);
+                    console.log('Available featuredGames:', contentData.featuredGames);
+                    console.log('Available games:', contentData.games);
+                    displayGameNotFound();
+                }
+            } catch (error) {
+                console.error('Error loading game data:', error);
+                displayGameNotFound();
+            }
+        }
+
+        function displayGame(game) {
+            console.log('Displaying game:', game);
+            document.getElementById('game-name').textContent = game.title;
+            
+            document.getElementById('submission-date').textContent = game.date || 'Unknown';
+            document.getElementById('genre').textContent = game.genre || 'Unknown';
+            
+            const authorIcon = document.querySelector('.credits .icon');
+            if (authorIcon) {
+                const pfpPath = `assets/pfps/${game.author.toLowerCase()}pfp.png`;
+                authorIcon.src = pfpPath;
+                authorIcon.alt = game.author;                
+                authorIcon.onerror = function() {
+                    this.src = 'assets/oldgrounds.png';
+                };
+            }
+            
+            const authorName = document.querySelector('.credits h2.author a');
+            if (authorName) {
+                authorName.textContent = game.author;
+            }
+            
+            const authorComments = document.getElementById('author-comments');
+            if (authorComments) {
+                authorComments.textContent = game.description || 'No description available.';
+            }
+            
+            const gameEmbed = document.getElementById('flash_embed');
+            console.log('Game type for embedding:', game.type);
+            console.log('Game embed_url:', game.embed_url);
+            
+            if (game.embed_url) {
+                if (game.type === 'flash') {
+                    console.log('Setting up Flash game with Ruffle');
+                gameEmbed.innerHTML = `
+                    <div id="ruffle-container-${game.id}" style="width:100%; height:400px;">
+                        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+                                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" 
+                                width="100%" height="400">
+                            <param name="movie" value="${game.embed_url}">
+                            <param name="quality" value="high">
+                            <param name="wmode" value="transparent">
+                            <embed src="${game.embed_url}" 
+                                   quality="high" 
+                                   wmode="transparent" 
+                                   width="100%" 
+                                   height="400" 
+                                   type="application/x-shockwave-flash">
+                        </object>
+                    </div>
+                `;
+                
+                if (window.RufflePlayer) {
+                    const ruffleContainer = document.getElementById(`ruffle-container-${game.id}`);
+                    
+                    try {
+                        let rufflePlayer = null;
+                        
+                        if (window.RufflePlayer.newest) {
+                            try {
+                                const ruffleInstance = window.RufflePlayer.newest();
+                                console.log('RufflePlayer.newest() result:', ruffleInstance);
+                                
+                                if (ruffleInstance && ruffleInstance.createPlayer) {
+                                    rufflePlayer = ruffleInstance.createPlayer();
+                                    console.log('Created player from instance:', rufflePlayer);
+                                }
+                            } catch (e) {
+                                console.log('RufflePlayer.newest() failed:', e);
+                            }
+                        }
+                        
+                        if (!rufflePlayer && window.RufflePlayer.createPlayer) {
+                            try {
+                                rufflePlayer = window.RufflePlayer.createPlayer();
+                                console.log('RufflePlayer.createPlayer() result:', rufflePlayer);
+                            } catch (e) {
+                                console.log('RufflePlayer.createPlayer() failed:', e);
+                            }
+                        }
+                        
+                        if (!rufflePlayer && window.RufflePlayer) {
+                            try {
+                                rufflePlayer = new window.RufflePlayer();
+                                console.log('Direct RufflePlayer constructor result:', rufflePlayer);
+                            } catch (e) {
+                                console.log('Direct RufflePlayer constructor failed:', e);
+                            }
+                        }
+                        
+                        if (rufflePlayer && rufflePlayer.nodeType) {
+                            console.log('Valid Ruffle player found, configuring...');
+                            
+                            if (rufflePlayer.config) {
+                                rufflePlayer.config = {
+                                    allowScriptAccess: false,
+                                    autoplay: "on",
+                                    backgroundColor: "#000000",
+                                    letterbox: "on",
+                                    logLevel: "warn",
+                                    showSwfDownload: false,
+                                    unmuteOverlay: "hidden"
+                                };
+                            }
+                            
+                            if (rufflePlayer.load) {
+                                rufflePlayer.load(game.embed_url);
+                            } else if (rufflePlayer.loadFile) {
+                                rufflePlayer.loadFile(game.embed_url);
+                            }
+                            
+                            ruffleContainer.appendChild(rufflePlayer);
+                            console.log('Ruffle player appended successfully');
+                        } else {
+                            console.log('No valid Ruffle player found, using iframe fallback');
+                            throw new Error('Invalid Ruffle player');
+                        }
+                        
+                    } catch (ruffleError) {
+                        console.warn('Ruffle setup failed, using iframe fallback:', ruffleError);
+                        ruffleContainer.innerHTML = `
+                            <iframe src="${game.embed_url}" 
+                                    width="100%" 
+                                    height="100%" 
+                                    frameborder="0" 
+                                    scrolling="no" 
+                                    allowfullscreen>
+                            </iframe>
+                        `;
+                    }
+                } else {
+                    console.log('RufflePlayer not available, using iframe fallback');
+                    const ruffleContainer = document.getElementById(`ruffle-container-${game.id}`);
+                    ruffleContainer.innerHTML = `
+                        <iframe src="${game.embed_url}" 
+                                width="100%" 
+                                height="100%" 
+                                frameborder="0" 
+                                scrolling="no" 
+                                allowfullscreen>
+                        </iframe>
+                    `;
+                }
+                            } else if (game.type === 'web') {
+                    console.log('Setting up Web game with iframe');
+                    gameEmbed.innerHTML = `
+                        <iframe src="${game.embed_url}" 
+                                width="100%" 
+                                height="400" 
+                                frameborder="0" 
+                                scrolling="no" 
+                                allowfullscreen>
+                        </iframe>
+                    `;
+                } else {
+                    console.log('Unknown game type:', game.type, '- using iframe fallback');
+                    gameEmbed.innerHTML = `
+                        <iframe src="${game.embed_url}" 
+                                width="100%" 
+                                height="400" 
+                                frameborder="0" 
+                                scrolling="no" 
+                                allowfullscreen>
+                        </iframe>
+                    `;
+                }
+        } else if (game.thumbnail) {
+                gameEmbed.innerHTML = `
+                    <img src="${game.thumbnail}" alt="${game.title}" style="max-width:100%; max-height:400px;">
+                `;
+            } else {
+                gameEmbed.innerHTML = `
+                    <div style="display:flex; align-items:center; justify-content:center; height:400px; color:#666;">
+                        <div style="text-align:center;">
+                            <h3>Game Content</h3>
+                            <p>Game will be loaded here</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+                         document.getElementById('textunderflash').innerHTML = `
+                 <p><strong>${game.title}</strong></p>
+                 <p>${(game.description || 'No description available.').replace(/\n/g, '<br>')}</p>
+                 <p><em>Genre:</em> ${game.genre || 'Unknown'} | <em>Rating:</em> ${game.rating || 'Unknown'}</p>
+             `;
+             
+             displayContributors(game);
+             
+             loadRelatedGames(game);
+        }
+
+                         function displayGameNotFound() {
+            const gameNameElement = document.getElementById('game-name');
+            const authorLinkElement = document.getElementById('author-link');
+            const flashEmbedElement = document.getElementById('flash_embed');
+            
+            if (gameNameElement) {
+                gameNameElement.textContent = 'Game Not Found';
+            }
+            
+            if (authorLinkElement) {
+                authorLinkElement.textContent = 'Unknown';
+            }
+            
+            if (flashEmbedElement) {
+                flashEmbedElement.innerHTML = `
+                    <div style="display:flex; align-items:center; justify-content:center; height:400px; color:#666;">
+                        <div style="text-align:center;">
+                            <h3>Game Not Found</h3>
+                            <p>The requested game could not be loaded.</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+         function displayContributors(game) {
+             const contributorsList = document.getElementById('contributors-list');
+             if (!contributorsList) return;
+             
+             if (game.contributors && game.contributors.length > 0) {
+                 const contributorsHtml = game.contributors.map(contributor => 
+                     `<p class="contributor"><strong>${contributor.name}</strong> - ${contributor.role}</p>`
+                 ).join('');
+                 contributorsList.innerHTML = contributorsHtml;
+             } else {
+                 contributorsList.innerHTML = '<p class="contributor">No additional contributors</p>';
+             }
+         }
+
+        async function loadRelatedGames(currentGame) {
+            try {
+                const [contentResponse, linksResponse] = await Promise.all([
+                    fetch('data/content.json'),
+                    fetch('data/contentlinks.json')
+                ]);
+                
+                const contentData = await contentResponse.json();
+                const linksData = await linksResponse.json();
+                
+                let allGames = [];
+                if (contentData.games) allGames = allGames.concat(contentData.games);
+                if (contentData.featuredGames) allGames = allGames.concat(contentData.featuredGames);
+                
+                const relatedGames = allGames
+                    .filter(g => g.id != currentGame.id)
+                    .slice(0, 4);
+                
+                const relatedGamesHtml = relatedGames.map(game => {
+                    let portalPath = 'portal.html';
+                    if (linksData.games[game.id]) {
+                        const gameLinks = linksData.games[game.id];
+                        if (gameLinks.type === 'flash') {
+                            portalPath = 'portal.html';
+                        } else if (gameLinks.type === 'web') {
+                            portalPath = 'portal.html';
+                        }
+                    }
+                    
+                    return `
+                        <div>
+                            <div>
+                                <a href="${portalPath}?id=${game.id}" class="feature">
+                                    <img src="${game.thumbnail || 'assets/thumbs/antilgoc.png'}" alt="${game.title}">
+                                    <span class="fout">
+                                        <span class="fmid">
+                                            <span class="fin">
+                                                <span class="ftitle">${game.title}</span>
+                                                ${game.description || 'No description available.'}
+                                            </span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                const relatedGamesElement = document.getElementById('related-games');
+                if (relatedGamesElement) {
+                    relatedGamesElement.innerHTML = relatedGamesHtml;
+                }
+            } catch (error) {
+                console.error('Error loading related games:', error);
+            }
+        }
+
+        function vote(rating) {
+            if (rating >= 0 && rating <= 5) {
+                alert(`You voted ${rating}/5 for this game!`);
+            }
+        }
+
+        function showHover(rating) {
+            const texts = [
+                "Blam this piece of crap!",
+                "This makes poop look good.",
+                "Nothing too new or interesting.",
+                "Not bad. In fact… I like it!",
+                "This Flash is crunk, fo' shizzle!",
+                "Woot!!! All my 5 R belong to this!"
+            ];
+            
+            const buttonText = document.getElementById('button_hover_text');
+            if (buttonText && texts[rating]) {
+                buttonText.textContent = texts[rating];
+            }
+        }
+
+        function hideHover() {
+            const buttonText = document.getElementById('button_hover_text');
+            if (buttonText) {
+                buttonText.textContent = '';
+            }
+        }
+
+        function toggleFullscreen() {
+            const gameArea = document.getElementById('flash_embed');
+            const iframe = gameArea.querySelector('iframe');
+            
+            if (iframe) {
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.webkitRequestFullscreen) {
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) {
+                    iframe.msRequestFullscreen();
+                }
+            } else {
+                if (gameArea.requestFullscreen) {
+                    gameArea.requestFullscreen();
+                } else if (gameArea.webkitRequestFullscreen) {
+                    gameArea.webkitRequestFullscreen();
+                } else if (gameArea.msRequestFullscreen) {
+                    gameArea.msRequestFullscreen();
+                }
+            }
+        }
+
+        function toggleShareWindow() {
+            alert('Share functionality would be implemented here!');
+        }
+
+        document.addEventListener('DOMContentLoaded', initPortalView);
+    </script>
+</body>
+</html>
