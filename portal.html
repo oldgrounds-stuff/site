@@ -144,6 +144,16 @@
                     console.log('Found in featuredGames:', game);
                 }
                 
+                if (!game && contentData.webGames) {
+                    game = contentData.webGames.find(g => String(g.id) === String(gameId));
+                    console.log('Found in webGames:', game);
+                }
+                
+                if (!game && contentData.flashGames) {
+                    game = contentData.flashGames.find(g => String(g.id) === String(gameId));
+                    console.log('Found in flashGames:', game);
+                }
+                
                 if (!game && contentData.games) {
                     game = contentData.games.find(g => String(g.id) === String(gameId));
                     console.log('Found in games:', game);
@@ -207,8 +217,8 @@
             if (game.embed_url) {
                 if (game.type === 'flash') {
                     console.log('Setting up Flash game with Ruffle');
-                gameEmbed.innerHTML = `
-                    <div id="ruffle-container-${game.id}" style="width:100%; height:400px;">
+                    gameEmbed.innerHTML = `
+                        <div id="ruffle-container-${game.id}" style="width:100%; height:400px;">
                         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
                                 codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" 
                                 width="100%" height="400">
@@ -316,7 +326,7 @@
                         </iframe>
                     `;
                 }
-                            } else if (game.type === 'web') {
+                } else if (game.type === 'web') {
                     console.log('Setting up Web game with iframe');
                     gameEmbed.innerHTML = `
                         <iframe src="${game.embed_url}" 
@@ -339,7 +349,7 @@
                         </iframe>
                     `;
                 }
-        } else if (game.thumbnail) {
+            } else if (game.thumbnail) {
                 gameEmbed.innerHTML = `
                     <img src="${game.thumbnail}" alt="${game.title}" style="max-width:100%; max-height:400px;">
                 `;
@@ -354,15 +364,15 @@
                 `;
             }
             
-                         document.getElementById('textunderflash').innerHTML = `
-                 <p><strong>${game.title}</strong></p>
-                 <p>${(game.description || 'No description available.').replace(/\n/g, '<br>')}</p>
-                 <p><em>Genre:</em> ${game.genre || 'Unknown'} | <em>Rating:</em> ${game.rating || 'Unknown'}</p>
-             `;
-             
-             displayContributors(game);
-             
-             loadRelatedGames(game);
+            document.getElementById('textunderflash').innerHTML = `
+                <p><strong>${game.title}</strong></p>
+                <p>${(game.description || 'No description available.').replace(/\n/g, '<br>')}</p>
+                <p><em>Genre:</em> ${game.genre || 'Unknown'} | <em>Rating:</em> ${game.rating || 'Unknown'}</p>
+            `;
+            
+            displayContributors(game);
+            
+            loadRelatedGames(game);
         }
 
                          function displayGameNotFound() {
@@ -417,6 +427,8 @@
                 let allGames = [];
                 if (contentData.games) allGames = allGames.concat(contentData.games);
                 if (contentData.featuredGames) allGames = allGames.concat(contentData.featuredGames);
+                if (contentData.webGames) allGames = allGames.concat(contentData.webGames);
+                if (contentData.flashGames) allGames = allGames.concat(contentData.flashGames);
                 
                 const relatedGames = allGames
                     .filter(g => g.id != currentGame.id)
@@ -452,7 +464,7 @@
                     `;
                 }).join('');
                 
-                const relatedGamesElement = document.getElementById('related-games');
+                const relatedGamesElement = document.getElementById('relatedGames');
                 if (relatedGamesElement) {
                     relatedGamesElement.innerHTML = relatedGamesHtml;
                 }
