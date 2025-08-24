@@ -54,7 +54,16 @@
         "embed_url": "external-assets/games/web/YNoid2/",
         "type": "web",
         "portal_id": "5"
-    }
+    },
+    "6": {
+      "id": "6",
+      "title": "Baldi's Basics Plus (v0.3.2)",
+      "author": "koi",
+      "url": "external-assets/games/web/BBP/",
+      "embed_url": "external-assets/games/web/BBP/",
+      "type": "web",
+      "portal_id": "6"
+  }
   },
   "authors": {
     "koi": {

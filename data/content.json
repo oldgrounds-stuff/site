@@ -217,6 +217,25 @@
           "role": "Game"
         }
       ]
+    },
+    {
+      "id": "6",
+      "title": "Baldi's Basics Plus (v0.3.2)",
+      "shortdescription": "\nBaldi's Basics® Plus is an active stealth roguelike that parodies cheap '90s edutainment with a subtle horror twist!",
+      "description": "Baldi's Basics® Plus is an active stealth roguelike that parodies cheap '90s edutainment with a subtle horror twist!",
+      "author": "koi",
+      "url": "/portal/view/6",
+      "rating": "Ages 13+",
+      "thumbnail": "assets/thumbs/bbp.jpg",
+      "date": "2025-08-22",
+      "type": "Game",
+      "genre": "Horror",
+      "contributors": [
+        {
+          "name": "Baldi's Basics Plus Devs",
+          "role": "Game"
+        }
+      ]
     }
   ],
   "flashGames": [
